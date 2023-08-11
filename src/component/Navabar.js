@@ -38,11 +38,12 @@ const NavContainer = styled.nav`
     justify-content: center;
     align-items: center;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
-    
+   
     .nav-center{
       width: 90vw;
       margin: 0 auto;
       max-width: 1170px;
+      overflow-y: hidden;
     }
     img{
       width: 175px;
@@ -65,6 +66,12 @@ const NavContainer = styled.nav`
     .cart-btn-wrapper{
       display: none;
     }
+    /* li{
+      overflow-y: hidden;
+    } */
+    /* li:hover {
+          border-bottom: 2px solid hsl(22, 31%, 52%);
+    } */
     @media screen and (min-width: 992px) {
       .toggle-btn{
         display: none;

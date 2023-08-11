@@ -5,5 +5,16 @@ import Hero from "./Hero"
 import FeaturedProduct from "./FeaturedProduct";
 import Contact from "./Contact"
 import Service from "./Service"
+import Stars from "./Stars";
+import PageHero from "./PageHero";
+import ProductImages from "./ProductImages";
+import Loading from "./Loading";
+import Error from "./Error";
+import Colors from "./Colors";
+import ChoiseTypeView from "./ChoiseTypeView";
+import FilterPart from './FilterPart'
+import GridView from "./GridView";
+import ListView from "./ListView";
 
-export {Navabar, Sidebar, Footer, Hero, FeaturedProduct, Contact, Service }
+export {Navabar, Sidebar, Footer, Hero, FeaturedProduct, Contact, Service, Stars, PageHero, ProductImages,
+Loading, Error, Colors, ChoiseTypeView, FilterPart, GridView, ListView }

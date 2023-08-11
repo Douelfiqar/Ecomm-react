@@ -4,11 +4,17 @@ import styled from 'styled-components'
 const Contact = () => {
   return (
     <Wraper>
-      <h1>join our newsletter and get 20% off</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos laboriosam nulla vero ducimus voluptate minus, hic repellendus id cumque dolore consequuntur, culpa commodi, sint nihil dolorum deleniti. Excepturi, commodi amet!</p>
-      <div className='inptBlock'>
-        <input type="email" placeholder='Enter Email'/>
-        <button className='btn'>Subscribe</button>
+      <div className='services-grid'>
+        <div className='text-content'>
+        <h1>join our newsletter and get 20% off</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos laboriosam nulla vero ducimus voluptate minus, hic repellendus id cumque dolore consequuntur, culpa commodi, sint nihil dolorum deleniti. Excepturi, commodi amet!</p>
+        </div>
+        <div className='inptBlock' >
+          <form action="">
+            <input type="email" placeholder='Enter Email'/>
+            <button className='btn'>Subscribe</button>
+          </form>
+        </div>
       </div>
     </Wraper>
   )
@@ -20,8 +26,9 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 letter-spacing: 1px;
-padding: 30px 15px;
-
+padding: 80px 15px;
+width: 90vw;
+overflow-x: hidden;
 h1{
   font-weight: 600;
   text-transform: capitalize;
@@ -59,8 +66,40 @@ input{
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
   border: 2px solid #222;
-  padding-top: 0.55rem;
+  /* padding-top: 0.55rem; */
+  height: 35.5px;
   cursor: pointer;
+}
+@media screen and (min-width: 992px) {
+  margin-top: 200px;
+  padding-bottom: 200px;
+  .services-grid{
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20;
+  }
+  .text-content{
+    max-width: 550px;
+  }
+  .inptBlock{
+    max-width: 550px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+  }
+  input{
+    width: 340px;
+    height: 30px;
+  }
+  h1{
+    font-size: 30px;
+    font-weight: 700;
+  }
+  .btn{
+    /* padding-top: 0.9rem; */
+    height: 47.5px;
+  }
 }
 
 `

@@ -2,11 +2,11 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
-export const PageHero = ({page}) => {
+export const PageHero = ({page, products}) => {
   return (
     <Wraper>
         <div className="section-center">
-            <Link to={"/"}>Home </Link><span> / {page}</span>
+            <Link to={"/"}>Home </Link> {products && <Link to="/products">/ Products </Link>} <span> / {page}</span>
         </div>
     </Wraper>
   )
@@ -44,3 +44,4 @@ const Wraper = styled.section`
 
     }
 `
+export default PageHero;

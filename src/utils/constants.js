@@ -41,3 +41,6 @@ export const links = [
         'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates, ea. Perferendis corrupti reiciendis nesciunt rerum velit autem unde numquam nisi',
     },
   ]
+
+  export const url = "https://course-api.com/react-store-products";
+  export const single_product_url = `https://course-api.com/react-store-single-product?id=`

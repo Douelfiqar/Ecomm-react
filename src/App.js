@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { About, Cart, Checkout, Error, Home, Products } from './pages';
+import { About, Cart, Checkout, Error, Home, Products, SingleProduct } from './pages';
 import { Footer, Navabar, Sidebar } from './component';
 
 
@@ -14,6 +14,7 @@ function App() {
           <Route exact path="/about" element={<About />} />
           <Route exact path="/cart" element={<Cart />} />
           <Route exact path="/products" element={<Products />} />
+          <Route exact path="/product/:id" element={<SingleProduct />} />
           <Route exact path="/checkout" element={<Checkout />} />
           <Route path="*" element={<Error />} />
       </Routes>
