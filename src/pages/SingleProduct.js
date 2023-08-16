@@ -1,14 +1,16 @@
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { useProductsContext } from '../context/product_context'
 import { single_product_url } from '../utils/constants'
 import styled from 'styled-components'
 import { Colors, Error, Loading, PageHero, ProductImages, Stars } from '../component'
 import { formatPrice } from '../utils/helpers'
+import { useCartContext } from '../context/cart_context'
 
 const SingleProduct = () => {
   const {id} = useParams()
   const {single_product_loading: laoding, product, single_product_error:error, fetchSingleProduct} = useProductsContext()
+  
   useEffect(()=>{
     
     fetchSingleProduct(single_product_url+id)
@@ -44,14 +46,13 @@ const SingleProduct = () => {
             <hr />
 
             {product.stock > 0 && <Colors product={product} />}
-            {product.stock > 0 && <Link to={"/cart"}><button className='btn'>add to cart</button></Link>}
           </div>
           </div>
       </div>
     </Wraper>
     </>
   )
-}
+} 
 
 const Wraper = styled.section`
   padding: 20px;

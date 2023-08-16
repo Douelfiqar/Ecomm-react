@@ -65,9 +65,6 @@ export const FilterProvider = ({children}) => {
         dispatch({type: UPDATE_FILTERS, payload: {value, name}})
     }
 
-    
-
-
     useEffect(()=>{
        fetchProducts()
     //    dispatch({type:UPDATE_FILTERS, payload: products})

@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
 import { FaCheck } from 'react-icons/fa'
 import styled from 'styled-components'
+import { useCartContext } from '../context/cart_context'
+import { Link } from 'react-router-dom'
 
 const Colors = ({product}) => {
 
   const  {id, stock, colors} = product
+  const { add_to_cart } = useCartContext()
 
   const [mainColor, setMainColor] = useState(0)
   const [quantite, setQuantite] = useState(1)
@@ -22,6 +25,9 @@ const Colors = ({product}) => {
       setQuantite(quantiteCopy=quantiteCopy + 1)
     }
   }
+
+  // const {setColor} = useCartContext();
+
   return (
     <Wraper>
       <div className="colors">
@@ -37,11 +43,25 @@ const Colors = ({product}) => {
         <h3>{quantite}</h3>
         <button onClick={()=>{increase()}}>+</button>
       </div>
+      {stock > 0 && <Link to={"/cart"}><button onClick={()=>add_to_cart(id, colors[mainColor], quantite, product)} className='btn'>add to cart</button></Link>}
+
     </Wraper>
   )
 }
 
 const Wraper = styled.div`
+  .btn{
+    background-color: hsl(22, 28%, 45%);
+    border: none;
+    padding: 8px 10px;
+    color: #FFF;
+    text-transform: capitalize;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    cursor: pointer;
+  }
   .btn-color{
     border-radius: 50%;
     border: none;

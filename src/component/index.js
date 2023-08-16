@@ -15,6 +15,6 @@ import ChoiseTypeView from "./ChoiseTypeView";
 import FilterPart from './FilterPart'
 import GridView from "./GridView";
 import ListView from "./ListView";
-
+import CartTotal from "./CartTotal"
 export {Navabar, Sidebar, Footer, Hero, FeaturedProduct, Contact, Service, Stars, PageHero, ProductImages,
-Loading, Error, Colors, ChoiseTypeView, FilterPart, GridView, ListView }
+Loading, Error, Colors, ChoiseTypeView, FilterPart, GridView, ListView, CartTotal }
