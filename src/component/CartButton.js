@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { useProductsContext } from '../context/product_context'
 
-export const CartButton = () => {
+export const CartButton = ({totalItems}) => {
     const data = useProductsContext()
   return (
     <Wraper className='cart-btn-wrapper'>
@@ -12,7 +12,7 @@ export const CartButton = () => {
             Cart
             <span className="cart-container">
                 <FaShoppingCart className='icon' />
-                <span className='cart-value'>12</span>
+                <span className='cart-value'>{totalItems}</span>
             </span>
         </Link>
         <button type='button' className='btn-auth' onClick={data.closeSidebar}>
@@ -45,11 +45,11 @@ const Wraper = styled.div`
         position: absolute;
         top:-8px;
         right: -12px;
-        font-size: 8px;
+        font-size: 13px;
         background-color: hsl(22, 31%, 52%);
         color: #FFF;
         border-radius: 50%;
-        padding: 4px;
+        padding: 1px 5px;
         font-weight: 600;
         text-align: center;
     }

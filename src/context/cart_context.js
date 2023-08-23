@@ -12,10 +12,33 @@ const getLocalStorage = () => {
         return []
     }
 }
+const getTotalIteams = () => {
+    let cart = localStorage.getItem('cart')
+    if(cart){
+        const cartTemp = JSON.parse(localStorage.getItem('cart'))
+        return Object.keys(cartTemp).length}
+    else{
+        return 0
+    }
+}
+
+const getTotalAmounth = () => {
+    let cart = localStorage.getItem('cart')
+    if(cart){
+        const cartTemp = JSON.parse(localStorage.getItem('cart'))
+        let totalPrice = cartTemp.map((item)=> item.price*item.amount)
+        
+        return totalPrice
+    }
+    else{
+        return 0
+    }
+}
+
 const InitialState = {
     cart : getLocalStorage(),
-    totalIteams: 0,
-    totalAmount: 0,
+    totalIteams: getTotalIteams(),
+    totalAmount: getTotalAmounth(),
     shipping_fee : 534
 }
 

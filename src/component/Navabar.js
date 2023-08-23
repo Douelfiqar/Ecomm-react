@@ -1,13 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { FaBars } from 'react-icons/fa'
 import { links } from '../utils/constants'
 import { CartButton } from './CartButton'
 import { useProductsContext } from '../context/product_context'
+import { useCartContext } from '../context/cart_context'
 
 const Navabar = () => {
   const data = useProductsContext()
+  const {totalIteams} = useCartContext()
+
+  console.log(totalIteams);
   return (
     <NavContainer>
       <div className="nav-center">
@@ -26,7 +30,7 @@ const Navabar = () => {
             return (<li key={id}><Link to={url}>{text}</Link></li>)
         })}
         </ul>
-        <CartButton />
+        <CartButton totalItems={totalIteams} />
       </div>
     </NavContainer>
   )
